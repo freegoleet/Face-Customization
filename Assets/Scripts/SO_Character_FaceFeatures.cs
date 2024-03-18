@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Character Face Features", menuName = "ScriptableObjects/Entities/Character Face Features", order = 1)]
+[CreateAssetMenu(fileName = "Character Face Features", menuName = "ScriptableObjects/Character Face Features", order = 1)]
 public class SO_Character_FaceFeatures : ScriptableObject
 {
     [SerializeField]

@@ -13,6 +13,7 @@ public class UI_Character_Create_Grid : MonoBehaviour
     private float m_PaddingBottom = 20f;
 
     public FaceFeature Feature { get; private set; } = FaceFeature.None;
+
     private int m_Cols = 0;
     private int m_Rows = 0;
 

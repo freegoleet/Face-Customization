@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "UI Colors", menuName = "ScriptableObjects/Misc/UI Colors", order = 1)]
+[CreateAssetMenu(fileName = "UI Colors", menuName = "ScriptableObjects/UI Colors", order = 1)]
 public class SO_UI_Colors : ScriptableObject
 {
     [SerializeField]

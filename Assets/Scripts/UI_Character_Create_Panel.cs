@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum FaceFeature
 {
@@ -31,8 +30,6 @@ public class UI_Character_Create_Panel : MonoBehaviour
     private UI_Character_Create_Grid m_Grid = null;
     [SerializeField]
     private RectTransform m_Content = null;
-    [SerializeField]
-    private ScrollRect m_ScrollRect = null;
 
     [Header("Feature Index Buttons")]
     [SerializeField]
@@ -196,6 +193,8 @@ public class UI_Character_Create_Panel : MonoBehaviour
 
     private void SetColorOfFeatureType(FaceFeature feature, Color color)
     {
+        m_Face.SetFeatureColor(feature, color);
+
         for (int i = 0; i < ButtonsByFeature[feature].Count; i++)
         {
             ButtonsByFeature[feature][i].SetFeatureColor(color);
@@ -246,7 +245,6 @@ public class UI_Character_Create_Panel : MonoBehaviour
 
         CurrentlyChosenFeatures[feature].Color = color;
         SetColorOfFeatureType(feature, color);
-        m_Face.SetFeatureColor(feature, color);
     }
 
     /// <summary>
@@ -264,6 +262,8 @@ public class UI_Character_Create_Panel : MonoBehaviour
 
             int index = UnityEngine.Random.Range(0, m_CharacterFeatures[feature].Count);
             m_Face.SetFeature(feature, index);
+            SetupColor(feature, UnityEngine.Random.ColorHSV());
+
             SelectFeature(feature, index);
         }
 
